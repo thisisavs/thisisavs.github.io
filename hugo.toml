@@ -1,0 +1,35 @@
+baseURL = 'https://thisisavs.github.io/'
+languageCode = 'en-us'
+title = 'thisisavs'
+theme = 'hextra'
+
+[params]
+  description = "Personal website - TIL, projects, and thoughts"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    pageRef = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Now"
+    pageRef = "/now"
+    weight = 2
+  [[menu.main]]
+    name = "TIL"
+    pageRef = "/til"
+    weight = 3
+  [[menu.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 4
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 5
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
