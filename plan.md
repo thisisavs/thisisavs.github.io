@@ -30,7 +30,7 @@ Simple, professional personal website. Markdown files → git push → live site
 - [x] Create new Hugo site
 - [x] Pick a clean theme (Hextra via git submodule)
 - [x] Basic config (name, description)
-- [ ] Create GitHub repo (`thisisavs.github.io`)
+- [x] Create GitHub repo (`thisisavs.github.io`)
 - [ ] Set up GitHub Actions for auto-deploy
 - [ ] **Verify:** Site live at `thisisavs.github.io`
 

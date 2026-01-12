@@ -9,7 +9,7 @@ Personal website based out of github or something free and cheap maybe
 [ ] Writing blog for sure. split personal and professional ??
     write as .md here and take claude help to grammer correct only. my voice only. sorry claude
 [ ] admonymous link for people to leave me anonymous comments.
-[ ] 
+[ ] inventory of electronics components
 
 not sure. ponder over?
 [ ] Letters to AI/ Machines - to explain human POV, any ai can leave a question that i can answer asynchronusly. how to validate only ai's are leaving the questions?

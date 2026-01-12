@@ -1,6 +1,6 @@
 baseURL = 'https://thisisavs.github.io/'
 languageCode = 'en-us'
-title = 'thisisavs'
+title = 'A V S Sai Babu'
 theme = 'hextra'
 
 [params]
