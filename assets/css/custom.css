@@ -1,0 +1,14 @@
+.about-intro {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.about-photo {
+  width: 160px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.about-text h2 {
+  margin-top: 0;
+}

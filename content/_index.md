@@ -2,14 +2,14 @@
 title: "A V S Sai Babu"
 ---
 
-<div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
-  <img src="/Sai_Photo_Square.jpg" alt="Sai" style="width: 160px; border-radius: 8px; flex-shrink: 0;">
-  <div>
-    <h2 style="margin-top: 0;">Hi, I'm Sai</h2>
-    <p>[A brief intro - e.g., "Software engineer curious about AI, systems thinking, and building things that matter."]</p>
-    <p>[What gets you excited? What do you care about? What's your approach to work/life?]</p>
-  </div>
-</div>
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+<td valign="top">
+<h2>Hi, I'm Sai</h2>
+<p>[A brief intro - e.g., "Software engineer curious about AI, systems thinking, and building things that matter."]</p>
+<p>[What gets you excited? What do you care about? What's your approach to work/life?]</p>
+</td>
+<td width="180" valign="top"><img src="/Sai_Photo_Square.jpg" alt="Sai" width="160"></td>
+</tr></table>
 
 ---
 
