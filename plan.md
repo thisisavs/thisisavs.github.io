@@ -120,10 +120,21 @@ git push
 ## Status
 **Current Phase:** 2-5 structure complete, needs real content
 **Next Steps:**
-1. Fill in About page placeholders (`content/_index.md`)
-2. Fill in /now page (`content/now.md`)
-3. Write first real TIL
-4. Set up GitHub Actions when ready to deploy
+1. Fix About page layout (current table hack has borders showing - need Hextra docs to do it properly)
+2. Fill in About page placeholders (`content/_index.md`)
+3. Fill in /now page (`content/now.md`)
+4. Write first real TIL
+5. Set up GitHub Actions when ready to deploy
+
+### Known Issue
+About page side-by-side layout not working properly. Tried:
+- Inline styles (stripped by Hugo)
+- `<style>` block (stripped)
+- Custom CSS in `assets/css/custom.css` (not loading)
+- Tailwind classes with `hx:` prefix (not applied)
+- HTML table (works but has border styling from theme)
+
+**Solution:** Check Hextra docs for proper way to add custom layouts or use shortcodes.
 
 ### Resume Instructions
 ```bash
