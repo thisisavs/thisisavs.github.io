@@ -6,27 +6,40 @@ theme = 'hextra'
 [params]
   description = "Personal website - TIL, projects, and thoughts"
 
+  [params.navbar]
+    displayTitle = true
+    displayLogo = true
+    [params.navbar.logo]
+      path = "owl_logo.png"
+      dark = "owl_logo_dark.png"
+      width = 28
+      height = 28
+
 [menu]
   [[menu.main]]
-    name = "About"
+    name = "Home"
     pageRef = "/"
     weight = 1
   [[menu.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 2
+  [[menu.main]]
     name = "Now"
     pageRef = "/now"
-    weight = 2
+    weight = 3
   [[menu.main]]
     name = "TIL"
     pageRef = "/til"
-    weight = 3
+    weight = 4
   [[menu.main]]
     name = "Projects"
     pageRef = "/projects"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "Blog"
     pageRef = "/blog"
-    weight = 5
+    weight = 6
 
 [markup.goldmark.renderer]
   unsafe = true
