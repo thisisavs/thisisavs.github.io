@@ -88,16 +88,18 @@ See `front-matter-templates.md` for full templates.
 ### What's Done
 - ✅ Homepage with hero, recent TIL/Blog columns, project image cards (6-column grid)
 - ✅ Celtic owl logo + favicon system (light/dark mode)
-- ✅ TIL section with 7 entries
+- ✅ TIL section with 8 entries (numbered prefixes for ordering)
 - ✅ Blog section with 5 migrated WordPress posts (2014-2016)
-- ✅ Projects section with 4 image cards (Competitor News Digest, Owl Babies, Let Claude Be, This Website)
+- ✅ Projects section with 4 image cards
+- ✅ Tags display enabled (on listings + TOC sidebar)
+- ✅ Co-author disclaimers standardized (top of content, after cover images)
 - ✅ Example files cleaned up
 
-### What's Next
-1. **About page** - needs real content (user working on this)
-2. **Now page** - needs content (user working on this)
-3. **GitHub Actions** - set up auto-deploy workflow
-4. **Deploy** - push to GitHub and go live
+### What's Next (User's Tasks)
+1. **About page** - fill in real content (`content/about.md`)
+2. **Now page** - fill in content (`content/now.md`)
+3. **GitHub Actions** - user learning, will set up auto-deploy
+4. **Small tweaks** - user making name display changes etc.
 
 ### Parked Ideas
 - LLMs.txt support with Human/Machine toggle (see `Sai_offline_inputs.md`)
@@ -133,7 +135,50 @@ python ~/.claude/skills/nanobanana/scripts/generate.py "prompt" -a 16:9 -r 2K -o
 ```
 Theme: Raspberry Pi + emergence patterns (cellular automata, fractals), dark background with glowing cyan/amber elements.
 
-## Session Notes (2026-01-18)
+## Session Notes (2026-01-18 - Part 2)
+
+### Tags Display Enabled
+Added to `hugo.toml`:
+```toml
+[params.blog.list]
+  displayTags = true
+
+[params.toc]
+  displayTags = true
+```
+- Tags now appear on blog/TIL listing pages
+- Tags appear in TOC sidebar on individual posts
+- Clicking a tag goes to `/tags/{tag-name}/` showing all posts with that tag
+- Did NOT add Tags to navbar (user preference - can access via clicking tags on posts)
+
+### Co-author Disclaimer Pattern
+For AI-assisted content, add disclaimer line:
+- **TIL/Blog posts** (no cover image): Right after front matter `---`
+- **Projects** (with cover image): After the cover image, before first heading
+
+Example for projects:
+```markdown
+---
+title: "Project Name"
+...
+---
+
+![Cover](/project-images/cover.png)
+
+*Co-authored with Claude (Anthropic)*
+
+## First Heading
+```
+
+### GitHub Actions Resources Shared
+User wants to learn GitHub Actions for deployment. Recommended:
+- [GitHub Docs Quickstart](https://docs.github.com/actions/quickstart)
+- [freeCodeCamp Guide](https://www.freecodecamp.org/news/learn-to-use-github-actions-step-by-step-guide/)
+- [Microsoft Learn Module](https://learn.microsoft.com/en-us/training/modules/introduction-to-github-actions/) (video)
+
+---
+
+## Session Notes (2026-01-18 - Part 1)
 
 ### Added Competitor News Digest Project
 - Source: https://github.com/thisisavs/agents_capstone
