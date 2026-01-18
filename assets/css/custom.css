@@ -12,3 +12,12 @@
 .about-text h2 {
   margin-top: 0;
 }
+
+/* Home page list cards - no border in dark mode, show on hover */
+.home-list-card {
+  border-color: transparent !important;
+}
+
+.dark .home-list-card:hover {
+  border-color: rgb(64 64 64) !important; /* neutral-700 */
+}

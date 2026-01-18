@@ -6,6 +6,12 @@ theme = 'hextra'
 [params]
   description = "Personal website - TIL, projects, and thoughts"
 
+  [params.blog.list]
+    displayTags = true
+
+  [params.toc]
+    displayTags = true
+
   [params.navbar]
     displayTitle = true
     displayLogo = true

@@ -19,38 +19,38 @@
     <!-- Recent Content Section -->
     <div class="hx:grid hx:grid-cols-1 hx:md:grid-cols-2 hx:gap-8 hx:mb-12">
 
-      <!-- Recent Blog -->
-      <div>
-        <h2 class="hx:text-2xl hx:font-bold hx:mb-4 hx:text-slate-800 hx:dark:text-slate-200">
-          <a href="/blog" class="hx:hover:text-primary-600">Recent Blog</a>
-        </h2>
-        <div class="hx:space-y-4">
-          {{- $blogPages := (site.GetPage "/blog").Pages | first 3 -}}
-          {{- range $blogPages }}
-          <a href="{{ .RelPermalink }}" class="hx:block hx:p-4 hx:rounded-lg hx:border hx:border-gray-200 hx:dark:border-neutral-800 hx:hover:border-gray-300 hx:dark:hover:border-neutral-700 hx:hover:bg-slate-50 hx:dark:hover:bg-neutral-900 hx:transition-all">
-            <h3 class="hx:font-semibold hx:text-gray-800 hx:dark:text-gray-200">{{ .Title }}</h3>
-            <p class="hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:mt-1">{{ .Date.Format "Jan 2, 2006" }}</p>
-          </a>
-          {{- else }}
-          <p class="hx:text-gray-500 hx:dark:text-gray-400 hx:italic">No blog posts yet.</p>
-          {{- end }}
-        </div>
-      </div>
-
       <!-- Recent TIL -->
       <div>
         <h2 class="hx:text-2xl hx:font-bold hx:mb-4 hx:text-slate-800 hx:dark:text-slate-200">
           <a href="/til" class="hx:hover:text-primary-600">Recent TIL</a>
         </h2>
-        <div class="hx:space-y-4">
+        <div class="hx:space-y-3">
           {{- $tilPages := (site.GetPage "/til").Pages | first 3 -}}
           {{- range $tilPages }}
-          <a href="{{ .RelPermalink }}" class="hx:block hx:p-4 hx:rounded-lg hx:border hx:border-gray-200 hx:dark:border-neutral-800 hx:hover:border-gray-300 hx:dark:hover:border-neutral-700 hx:hover:bg-slate-50 hx:dark:hover:bg-neutral-900 hx:transition-all">
+          <a href="{{ .RelPermalink }}" class="home-list-card hx:block hx:p-4 hx:rounded-lg hx:border hx:hover:bg-slate-50 hx:dark:hover:bg-neutral-900 hx:transition-all">
             <h3 class="hx:font-semibold hx:text-gray-800 hx:dark:text-gray-200">{{ .Title }}</h3>
             <p class="hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:mt-1">{{ .Date.Format "Jan 2, 2006" }}</p>
           </a>
           {{- else }}
           <p class="hx:text-gray-500 hx:dark:text-gray-400 hx:italic">No TIL entries yet.</p>
+          {{- end }}
+        </div>
+      </div>
+
+      <!-- Recent Blog -->
+      <div>
+        <h2 class="hx:text-2xl hx:font-bold hx:mb-4 hx:text-slate-800 hx:dark:text-slate-200">
+          <a href="/blog" class="hx:hover:text-primary-600">Recent Blog</a>
+        </h2>
+        <div class="hx:space-y-3">
+          {{- $blogPages := (site.GetPage "/blog").Pages | first 3 -}}
+          {{- range $blogPages }}
+          <a href="{{ .RelPermalink }}" class="home-list-card hx:block hx:p-4 hx:rounded-lg hx:border hx:hover:bg-slate-50 hx:dark:hover:bg-neutral-900 hx:transition-all">
+            <h3 class="hx:font-semibold hx:text-gray-800 hx:dark:text-gray-200">{{ .Title }}</h3>
+            <p class="hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:mt-1">{{ .Date.Format "Jan 2, 2006" }}</p>
+          </a>
+          {{- else }}
+          <p class="hx:text-gray-500 hx:dark:text-gray-400 hx:italic">No blog posts yet.</p>
           {{- end }}
         </div>
       </div>
@@ -61,20 +61,35 @@
       <h2 class="hx:text-2xl hx:font-bold hx:mb-4 hx:text-slate-800 hx:dark:text-slate-200">
         <a href="/projects" class="hx:hover:text-primary-600">Projects</a>
       </h2>
-      <div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 3;">
-        {{- $projectPages := (site.GetPage "/projects").Pages | first 3 -}}
+      <div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 6;">
+        {{- $projectPages := (site.GetPage "/projects").Pages | first 4 -}}
         {{- range $projectPages }}
-        <a href="{{ .RelPermalink }}" class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900">
-          <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50">
-            {{ partial "utils/icon.html" (dict "name" "code") }}
-            {{ .Title }}
+        {{- $image := index .Params.images 0 }}
+        {{- $imageStyle := .Params.imageStyle }}
+        {{- $linkClass := "hx:hover:border-gray-300 hx:bg-transparent hx:shadow-xs hx:dark:border-neutral-800 hx:hover:bg-slate-50 hx:hover:shadow-md hx:dark:hover:border-neutral-700 hx:dark:hover:bg-neutral-900" }}
+        {{- with $image }}
+          {{- $linkClass = "hx:hover:border-gray-300 hx:bg-gray-100 hx:shadow-sm hx:dark:border-neutral-700 hx:dark:bg-neutral-800 hx:dark:text-gray-50 hx:hover:shadow-lg hx:dark:hover:border-neutral-500 hx:dark:hover:bg-neutral-700" }}
+        {{- end }}
+        <a href="{{ .RelPermalink }}" class="hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:hover:shadow-gray-100 hx:dark:hover:shadow-none hx:shadow-gray-100 hx:active:shadow-sm hx:active:shadow-gray-200 hx:transition-all hx:duration-200 {{ $linkClass }}">
+          {{- with $image -}}
+          <img
+            alt="{{ $.Title }}"
+            class="hextra-card-image"
+            loading="lazy"
+            decoding="async"
+            src="{{ . | safeURL }}"
+            {{ with $imageStyle }}style="{{ . | safeCSS }}"{{ end }}
+          />
+          {{- end -}}
+          <span class="hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:pt-4 hx:px-4 hx:text-gray-700 hx:hover:text-gray-900 hx:dark:text-neutral-200 hx:dark:hover:text-neutral-50">
+            {{- .Title -}}
           </span>
-          {{ with .Description }}
-          <div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">{{ . }}</div>
-          {{ end }}
+          {{- with .Description -}}
+          <div class="hextra-card-subtitle hx:line-clamp-3 hx:text-sm hx:font-normal hx:text-gray-500 hx:dark:text-gray-400 hx:px-4 hx:mb-4 hx:mt-2">{{- . | markdownify -}}</div>
+          {{- end -}}
         </a>
         {{- else }}
-        <p class="hx:text-gray-500 hx:dark:text-gray-400 hx:italic hx:col-span-3">No projects yet.</p>
+        <p class="hx:text-gray-500 hx:dark:text-gray-400 hx:italic hx:col-span-2">No projects yet.</p>
         {{- end }}
       </div>
     </div>
