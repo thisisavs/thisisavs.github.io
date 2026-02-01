@@ -27,7 +27,13 @@ Market research analyst curious about AI, systems thinking, and building things 
 
 <!-- Placeholder: Add your AI tools here -->
 
-*Coming soon - the AI tools I use daily for research, writing, and building.*
+#### Personal
+- 💖 Claude Code
+- Nano Banana Pro & Veo for Images and Video
+- ChatGPT
+
+#### At Work
+Copilot, Dataiku, Copilot Studio
 
 <!-- Example format:
 | Tool | Use Case |
@@ -43,8 +49,7 @@ Market research analyst curious about AI, systems thinking, and building things 
 ## Find Me
 
 - GitHub: [thisisavs](https://github.com/thisisavs)
-- LinkedIn: [your-profile]
-- Email: [your-email]
+- LinkedIn: [A V S Sai Babu](https://www.linkedin.com/in/avssaibabu/)
 
 ---
 
@@ -52,4 +57,6 @@ Market research analyst curious about AI, systems thinking, and building things 
   {{< card link="/now" title="What I'm doing now" icon="clock" >}}
   {{< card link="/til" title="Things I learned" icon="light-bulb" >}}
   {{< card link="/projects" title="Things I built" icon="code" >}}
+  {{< card link="/principles" title="Things I believe" icon="heart" >}}
+  {{< card link="/lists" title="Things I recommend" icon="bookmark" >}}
 {{< /cards >}}

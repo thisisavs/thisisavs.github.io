@@ -31,8 +31,10 @@ No npm/yarn/pip needed. Hugo is the only dependency.
 ```
 content/
 ├── _index.md          # Homepage (uses layouts/index.html)
-├── about.md           # About page
+├── about.md           # About page (partially filled)
 ├── now.md             # /now page
+├── lists.md           # Curated lists (placeholder)
+├── principles.md      # Personal principles (placeholder)
 ├── til/               # Today I Learned (type: blog)
 ├── blog/              # Blog posts (type: blog)
 └── projects/          # Project portfolio (type: blog)
@@ -67,6 +69,7 @@ Hextra v0.11.1 installed as git submodule in `themes/hextra/`. No Go required.
 ---
 title: "Post title"
 date: 2026-01-12
+lastmod: 2026-01-12
 tags:
   - tag1
 draft: false
@@ -74,7 +77,8 @@ description: "Optional summary for listings"
 ---
 ```
 
-See `front-matter-templates.md` for full templates.
+- `lastmod`: Update this when editing a post. Displayed as "Last updated on [date]" at bottom of post.
+- See `front-matter-templates.md` for full templates.
 
 ## User Context
 
@@ -83,28 +87,53 @@ See `front-matter-templates.md` for full templates.
 - Priority: Simplicity, no cost, clean professional look
 - See `Sai_offline_inputs.md` for user's idea backlog
 
-## Current Status (as of 2026-01-18)
+## Current Status (as of 2026-01-31)
 
 ### What's Done
 - ✅ Homepage with hero, recent TIL/Blog columns, project image cards (6-column grid)
 - ✅ Celtic owl logo + favicon system (light/dark mode)
 - ✅ TIL section with 8 entries (numbered prefixes for ordering)
-- ✅ Blog section with 5 migrated WordPress posts (2014-2016)
+- ✅ Blog section with 5 migrated WordPress posts + 1 new essay ("Let there be light")
 - ✅ Projects section with 4 image cards
 - ✅ Tags display enabled (on listings + TOC sidebar)
 - ✅ Co-author disclaimers standardized (top of content, after cover images)
-- ✅ Example files cleaned up
+- ✅ "Last updated" date enabled (`displayUpdatedDate = true` in hugo.toml)
+- ✅ About page partially filled (photo, AI tool stack, links, card nav)
+- ✅ Lists page created (placeholder with template)
+- ✅ Principles page created (placeholder with template)
 
 ### What's Next (User's Tasks)
-1. **About page** - fill in real content (`content/about.md`)
+1. **About page** - finish filling in real content (current job, past experience, side projects)
 2. **Now page** - fill in content (`content/now.md`)
-3. **GitHub Actions** - user learning, will set up auto-deploy
-4. **Small tweaks** - user making name display changes etc.
+3. **Lists page** - fill in curated lists (books, tools, advice)
+4. **Principles page** - fill in personal principles
+5. **GitHub Actions** - user learning, will set up auto-deploy
+6. **Add `lastmod` to existing TIL/Blog posts** - for transparency on older content
 
 ### Parked Ideas
 - LLMs.txt support with Human/Machine toggle (see `Sai_offline_inputs.md`)
-- Principles page
-- "Stuff I like" page
+
+## Session Notes (2026-01-31)
+
+### New Blog Post: "Let there be light"
+- Essay on AI as creative renaissance, parallels to Medici patronage and "Fiat Lux"
+- File: `content/blog/2026-01-29-let-there-be-light.md`
+- Tags: essays, renaissance, ai, optimism, build, world models
+- Date: 2026-01-23 (original writing date), lastmod: 2026-01-29
+
+### Enabled "Last Updated" Display
+- Added `displayUpdatedDate = true` to `[params]` in `hugo.toml`
+- Uses Hextra's built-in `last-updated.html` partial
+- Shows "Last updated on [date]" at bottom of blog/TIL posts
+- Requires `lastmod` field in front matter (Hugo standard field)
+- Existing posts without `lastmod` won't show the label (no breaking change)
+
+### Between-Session Changes (by user)
+- About page updated: photo, AI tool stack, links, card navigation to other sections
+- New pages created: `lists.md` (curated lists), `principles.md` (personal principles) - both placeholders
+- Navbar updated: added Principles and Lists links (visible in about page card nav)
+
+---
 
 ## Recent Session Notes (2026-01-17)
 
